@@ -1,0 +1,206 @@
+@import url("./days.css");
+@import url("./card.css");
+
+:root {
+  font-family: "Datatype";
+  --maxima: #ff0000;
+  --minima: #53e4f7;
+  --var__white: #fff;
+  --var__preta: #000;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+.sunny {
+  background-image: url("../img/background/sunny.jpeg");
+  --weather-gradient: linear-gradient(
+    210deg,
+    #4accff 0%,
+    #57b4c7 59%,
+    #45a7bf 74%,
+    #00749e 100%
+  );
+  --card-gradient: linear-gradient(
+    123deg,
+    #f2f538 0%,
+    #00749e 48%,
+    #007dab 86%
+  );
+  --text-color: #fff;
+}
+
+.cloudy {
+  background-image: url("../img/background/parcialmente.avif");
+  --weather-gradient: linear-gradient(
+    210deg,
+    #9db4c0 0%,
+    #638496 59%,
+    #465e6b 100%
+  );
+  --card-gradient: linear-gradient(
+    123deg,
+    #e0e0e0 0%,
+    #5d7a8c 48%,
+    #3a4d58 86%
+  );
+  --text-color: #1f1c1c;
+}
+
+.fog {
+  background-image: url("../img/background/fog.webp");
+  --weather-gradient: linear-gradient(
+    210deg,
+    #d1d1d1 0%,
+    #9e9e9e 59%,
+    #757575 100%
+  );
+  --card-gradient: linear-gradient(
+    123deg,
+    #ffffff 0%,
+    #888888 48%,
+    #555555 100%
+  );
+  --text-color: #333;
+}
+
+.drizzle {
+  background-image: url("../img/background/garoa.jpg");
+  --weather-gradient: linear-gradient(
+    210deg,
+    #a7c5d0 0%,
+    #7899a7 59%,
+    #54717d 100%
+  );
+  --card-gradient: linear-gradient(
+    123deg,
+    #89a7b1 0%,
+    #4a636d 48%,
+    #2c3e46 100%
+  );
+  --text-color: #fff;
+}
+
+.rain {
+  background-image: url("../img/background/chuva.png");
+  --weather-gradient: linear-gradient(
+    210deg,
+    #5f7a9e 0%,
+    #3e4e66 59%,
+    #252e3d 100%
+  );
+  --card-gradient: linear-gradient(
+    123deg,
+    #7a94b5 0%,
+    #2c3b50 48%,
+    #1a2533 100%
+  );
+  --text-color: #fff;
+}
+
+.snow {
+  background-image: url("../img/background/neve.jpg");
+  --weather-gradient: linear-gradient(
+    210deg,
+    #ffffff 0%,
+    #d7e3fc 59%,
+    #abc4ff 100%
+  );
+  --card-gradient: linear-gradient(
+    123deg,
+    #ffffff 0%,
+    #b6ccfe 48%,
+    #8093f1 100%
+  );
+  --text-color: #444;
+}
+
+.showers {
+  background-image: url("../img/background/tempestade.jpeg");
+  --weather-gradient: linear-gradient(
+    210deg,
+    #4b5d78 0%,
+    #2c384a 59%,
+    #1a222d 100%
+  );
+  --card-gradient: linear-gradient(
+    123deg,
+    #5a6e8c 0%,
+    #1e2a3a 48%,
+    #0d131b 100%
+  );
+  --text-color: #fff;
+}
+
+.thunderstorm {
+  background-image: url("../img/background/tempestade.jpeg");
+  --weather-gradient: linear-gradient(
+    210deg,
+    #373737 0%,
+    #1a1a1a 59%,
+    #000000 100%
+  );
+  --card-gradient: linear-gradient(
+    123deg,
+    #4d4d4d 0%,
+    #1a1a1a 48%,
+    #ffcc00 98%
+  );
+  --text-color: #fff;
+}
+
+.centraliza {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.display__weather {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color, var(--var__white));
+}
+
+.inputao {
+  width: 100%;
+  max-width: 500px;
+  padding: 18px 20px;
+
+  font-size: 18px;
+  border: none;
+  outline: none;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  color: var(--text-color);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+  transition: 0.3s ease;
+}
+
+.weather__h2,
+.description__h2,
+.temperature__h1 {
+  color: var(--text-color, var(--var__white));
+}
+
+.pesquisaLocalEButton {
+  display: flex;
+}
+
+.pesquisaLocalEButton button {
+  width: 30%;
+  border-radius: 30em;
+}

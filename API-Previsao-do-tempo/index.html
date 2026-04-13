@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=M+PLUS+Rounded+1c&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script type="module" src="scripts/dias.js" defer></script> 
+    <script type="module" src="scripts/reativo.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <title>Previsão do tempo</title>
+</head>
+
+<body class="sunny">
+
+    <main class="display__weather">
+        <div class="pesquisaLocalEButton centraliza" id="centraliza">
+        <input class="inputao hidden" placeholder="Minha localização &#128269" id="location__input" type="text">
+        <button class="hidden"id="map__button"><i class="fa-solid fa-map-location-dot"></i> <i class="fa-solid fa-location-dot"></i></button>
+        <div id="map" class=""></div>
+        </div>
+        <h2 class="description__h2" id="city__name"></h2>
+        <h1 class="temperature__h1" id="main__temp"></h1>
+        <h2 class="weather__h2" id="mensagemDebaixoDaTemp"></h2>
+    </main>
+
+    <section class="container__weather hidden" id="tabelinha">    
+        <div class="div__weather">
+            <h2 class="div__weather__h2">Acompanhe hoje e a semana toda aqui!</h2>
+            <br class="white__line">
+
+            <ul class="ul__weather">
+
+                <li class="li__upcoming__days active" id="first">
+                    <h2 class="li__upcoming__days__h2" id="day0_h2"></h2>
+                    <img id="day0_img">
+                    <h3 class="li__upcoming__days__h3" id="day0_h3"></h3>
+                    <h4 class="li__upcoming__days__h3" id="day0_h4"></h4>
+                </li>
+                <li class="li__upcoming__days" id="2">
+                    <h2 class="li__upcoming__days__h2" id="day1_h2"></h2>
+                    <img id="day1_img">
+                    <h3 class="li__upcoming__days__h3" id="day1_h3"></h3>
+                    <h4 class="li__upcoming__days__h3" id="day1_h4"></h4>
+                </li>
+                <li class="li__upcoming__days">
+                    <h2 class="li__upcoming__days__h2" id="day2_h2"></h2>
+                    <img id="day2_img">
+                    <h3 class="li__upcoming__days__h3" id="day2_h3"></h3>
+                    <h4 class="li__upcoming__days__h3" id="day2_h4"></h4>
+                </li>
+                <li class="li__upcoming__days">
+                    <h2 class="li__upcoming__days__h2" id="day3_h2"></h2>
+                    <img id="day3_img">
+                    <h3 class="li__upcoming__days__h3" id="day3_h3"></h3>
+                    <h4 class="li__upcoming__days__h3" id="day3_h4"></h4>
+                </li>
+                <li class="li__upcoming__days">
+                    <h2 class="li__upcoming__days__h2" id="day4_h2"></h2>
+                    <img id="day4_img">
+                    <h3 class="li__upcoming__days__h3" id="day4_h3"></h3>
+                    <h4 class="li__upcoming__days__h3" id="day4_h4"></h4>
+                </li>
+                <li class="li__upcoming__days">
+                    <h2 class="li__upcoming__days__h2" id="day5_h2"></h2>
+                    <img id="day5_img">
+                    <h3 class="li__upcoming__days__h3" id="day5_h3"></h3>
+                    <h4 class="li__upcoming__days__h3" id="day5_h4"></h4>
+                </li>
+                <li class="li__upcoming__days">
+                    <h2 class="li__upcoming__days__h2" id="day6_h2"></h2>
+                    <img id="day6_img">
+                    <h3 class="li__upcoming__days__h3" id="day6_h3"></h3>
+                    <h4 class="li__upcoming__days__h3" id="day6_h4"></h4>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="card__day hidden" id="section__infos">
+        <div id="todos-dias">
+            <div class="superior__part">
+
+            <div class="average__temp">
+                <h3 class="average__temp__h3">A temperatura média será:</h3>
+                <div class="average__temp__temp">
+                    <h2 class="average__temp__h2"></h2>
+                </div>
+            </div>
+
+            <div class="max__min">
+                <div class="max">
+                    <div class="temp__h3__container">
+                        <i class="fa-solid fa-temperature-full" id="max-icon"></i>
+                        <h3 class="max__h3">Temperatura máxima</h3>
+                    </div>
+                    <h3 class="max__temp" id="temp0_max"></h3>
+                </div>
+
+                <div class="min">
+                    <div class="temp__h3__container">
+                        <i class="fa-solid fa-temperature-full" id="min-icon"></i>
+                        <h3 class="min__h3">Temperatura mínima</h3>
+                    </div>
+                    <h3 class="min__temp" id="temp0_min"></h3>
+                </div>
+            </div>
+            <img src="./img/x.png" class="close__window">
+        </div>
+
+        <div class="middle__part">
+            <div class="wind">
+                <h2 class="m__h2">o vento está a:</h2>
+                <h3 class="m__h3" id="vento"></h3>
+            </div>
+            <div class="humidity">
+                <h2 class="m__h2">a umidade está a:</h2>
+                <h3 class="m__h3" id="umidade"></h3>
+            </div>
+             <div class="chance--chuva">
+                <h2 class="m__h2">a chance de chuva é:</h2>
+                <h3 class="m__h3" id="chuva"></h3>
+                <h4 class="m__h3" id="mensagem"></h4>
+            </div>
+        </div>
+        </div>
+    </section>
+        
+</body>
+
+</html>
